@@ -166,7 +166,9 @@
 <script src="../assets/js/bootstrap.js"></script>
 <script src="../assets/js/base.js"></script> 
 
-<script>      
+<script>
+  if(localStorage.statusSKD) window.location.replace('soalTPATBI_PKN-STAN.html')
+
   function next(url) {
     url = (localStorage.statusSKD) ? 'soalTPATBI_PKN-STAN.html' : url
 
