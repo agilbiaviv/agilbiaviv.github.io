@@ -825,24 +825,43 @@ function soal(){
 	//tempatsoal
 	var tempatsoal = [];
 	var pilihansoal = [];
-	for(var y = 0; y < soalTPA.length; y++){
+	for(var y = 0; y < (soalTPA.length - 35); y++) {
 
-	tempatsoal [y]= '<label id="soal'+(y+1)+'" class="control-label soal" for="soal">'+soalTPA[y]+'</label>';
-	pilihansoal[y]= '<div class="pilihansoal" id="pilihansoal'+(y+1)+'" >';
-		for(var x=0; x < 5; x++){
-			if(opsi[y][x]==""){
+		tempatsoal[y] = '<label id="soal'+(y+1)+'" class="control-label soal" for="soal" style="line-height: 1.7;">'+soalTPA[y]+'</label>';
+		pilihansoal[y]= '<div class="pilihansoal" id="pilihansoal'+(y+1)+'" >';
+		for(var x = 0; x < 5; x++){
+			if(opsi[y][x] == "") {
 				pilihansoal[y] += '<label class="checkbox " style="display:none">'+opsi[y][x]+'<input class="checkboxbtn'+(y+1)+'"type="checkbox" value='+(x+1)+' name="checkboxbtn'+(y+1)+'" style="display:none">'+
-						'<span class="checkmark" style="display:none">  </span></label>';
-			}else{
-
-			pilihansoal[y] += '<label class="checkbox ">'+opsi[y][x]+'<input class="checkboxbtn'+(y+1)+'"type="checkbox" value='+(x+1)+' name="checkboxbtn'+(y+1)+'">'+
-						'<span class="checkmark">  </span></label>';
+							'<span class="checkmark" style="display:none">  </span></label>';
+			}else {
+				pilihansoal[y] += '<label class="checkbox ">'+opsi[y][x]+'<input class="checkboxbtn'+(y+1)+'"type="checkbox" value='+(x+1)+' name="checkboxbtn'+(y+1)+'">'+
+							'<span class="checkmark">  </span></label>';
+				}
 			}
-			}
-	pilihansoal[y] +='</div>';
-	datasoal += tempatsoal[y] ;
-	datapilihan +=pilihansoal[y];
-	}
+			pilihansoal[y] +='</div>';
+			datasoal += tempatsoal[y] ;
+			datapilihan +=pilihansoal[y];
+		}
+		
+		// tkp
+		for(var y = (soalTPA.length - 35); y < soalTPA.length; y++){
+	
+			tempatsoal[y] = '<label id="soal'+(y+1)+'" class="control-label soal" for="soal" style="line-height: 1.7;">'+soalTPA[y]+'</label>';
+			pilihansoal[y]= '<div class="pilihansoal" id="pilihansoal'+(y+1)+'" >';
+				for(var x=0; x < 5; x++){
+					if(opsi[y][x]==""){
+						pilihansoal[y] += '<label class="checkbox " style="display:none">'+opsi[y][x]+'<input class="checkboxbtn'+(y+1)+'"type="checkbox" value='+(x+1)+' name="checkboxbtn'+(y+1)+'" style="display:none">'+
+								'<span class="checkmark" style="display:none">  </span></label>';
+					}else{
+		
+						pilihansoal[y] += '<label class="checkbox ">'+ opsi[y][x].slice(0,-1) +'<input class="checkboxbtn'+(y+1)+'"type="checkbox" value='+ opsi[y][x].slice(opsi[y][x].length - 1) +' name="checkboxbtn'+(y+1)+'">'+
+									'<span class="checkmark">  </span></label>';
+					}
+				}
+			pilihansoal[y] +='</div>';
+			datasoal += tempatsoal[y] ;
+			datapilihan +=pilihansoal[y];
+		}
 // console.log(pilihansoal[1]);
 	return {
 		datasoal : datasoal,
