@@ -1536,6 +1536,10 @@ checkbox customization
 
 @media only screen and (max-width: 600px) {
 	a.brand {
+		display: none!important;
+	}
+
+	div.footer-inner {
 		display: none;
 	}
 }
