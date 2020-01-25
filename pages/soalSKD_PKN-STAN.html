@@ -394,7 +394,7 @@ $(document).ready(function() {
 
 
 //Cek jawaban
-var done = () => {
+var done = async () => {
     var data = soal();
     var benarTIU = 0;
     var salahTIU = 0;
@@ -452,11 +452,11 @@ var done = () => {
 
     localStorage.nilaiTKP = nilaiTKP;
 
-    localStorage.removeItem('waktu');
-    localStorage.removeItem('jawabanUser')
+    await localStorage.removeItem('waktu');
+    await localStorage.removeItem('jawabanUser')
 
     localStorage.statusSKD = 1
-    window.location.replace("soalTPATBI_PKN-STAN.html");
+    await window.location.replace("soalTPATBI_PKN-STAN.html");
 }
 
 var checkboxfunc = () => {
