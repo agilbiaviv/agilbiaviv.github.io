@@ -281,7 +281,7 @@ function soal(){
     opsi [23][0] = 'A. Riwayat raja-raja Singasari dan Majapahit'
     opsi [23][1] = 'B. Pemberontakan Ranggalawe'
     opsi [23][2] = 'C. Riwayat Raden Wijaya sampai menjadi Raja'
-    opsi [23][3] = 'Penaklukan Pulau Bali oleh Gajah Mada dan Aryadamar, pemindahan keraton Majapahit ke Gelgel, dan penumpasan raja raksasa Maya Denawa'
+    opsi [23][3] = 'D. Penaklukan Pulau Bali oleh Gajah Mada dan Aryadamar, pemindahan keraton Majapahit ke Gelgel, dan penumpasan raja raksasa Maya Denawa'
     opsi [23][4] = 'E. Kekacauan di Pulau Bali akibat keganasan Maya Denawa yang akhirnya dibunuh oleh dewa'
     opsi [23][5] = '4'
 

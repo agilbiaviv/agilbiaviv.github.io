@@ -1542,4 +1542,8 @@ checkbox customization
 	div.footer-inner {
 		display: none;
 	}
+
+	[class*="span"] {
+		width: 100%!important;
+	}
 }
