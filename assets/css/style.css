@@ -1547,3 +1547,30 @@ checkbox customization
 		width: 100%!important;
 	}
 }
+
+.back-to-home {
+	text-decoration: none;
+	color: #ffffff;
+	display: block;
+	height: 1.5rem;
+	background: #ffb949;
+	box-shadow: -.125rem -.125rem .125rem rgba(235, 215, 182, 1), 
+    -.125rem -.125rem .25rem rgba(235, 215, 182, .5), 
+    inset -.125rem -.125rem .125rem rgba(235, 215, 182, .3), 
+	-.125rem -.125rem .25rem rgba(0, 0, 0, .1);
+	transition: transform .3s;
+	border-radius: .5rem;
+	padding: 1rem;
+	text-align: center;
+	font-weight: 600;
+}
+
+.back-to-home:hover {
+	text-decoration: none;
+	color: #ffffff;
+	box-shadow: inset -.125rem -.125rem .125rem rgba(235, 215, 182, 1), 
+    inset -.125rem -.125rem .25rem rgba(235, 215, 182, .5), 
+    inset -.125rem -.125rem .125rem rgba(235, 215, 182, .3), 
+	inset -.125rem -.125rem .25rem rgba(0, 0, 0, .1);
+	transform: scale(.98);
+}
