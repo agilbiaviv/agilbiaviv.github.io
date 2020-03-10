@@ -7,7 +7,7 @@ var arr = [];
 }
 
 //set soal
-function soal(){
+function soal() {
 	var soalTPA = [];
 
 	//soal

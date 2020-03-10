@@ -81,7 +81,7 @@
             <div class="widget-header" style="text-align: center;"> <i class="icon-book"></i>
              <button class="btn-navigasi btn-navigasi_prev" id="prev" onclick="prev()" style="left: 1%;">Prev</button>
              <button class="btn-navigasi btn-navigasi_next" id="next" onclick="next()" style="right: 1%;">Next</button>
-             <h3 id="headersoal"> Soal TIU</h3>
+             <h3 id="headersoal"> Soal TPA</h3>
            </div>
       <!--   <div class="widget-header"> <i class="icon-list-alt"></i>
               <h3> TPA  </h3>
@@ -104,35 +104,14 @@
         </div>
         
         <div class="span4  nomorsoal-box" style="max-height: 350px; overflow: auto;">
-              <!-- /widget -->
-              <div class="widget widget-nopad">
-                <div class="widget-header"> <i class="icon-search"></i>
-                  <h3> Nomor Soal TIU</h3>
-                </div>
-                <!-- /widget-header -->
-                <div class="widget-content" id="tombolsoalTIU"></div>
-                <!-- /widget-content --> 
-              </div>
-              <!-- /widget --> 
 
               <!-- /widget -->
               <div class="widget widget-nopad">
                 <div class="widget-header"> <i class="icon-search"></i>
-                  <h3> Nomor Soal TWK</h3>
+                  <h3> Nomor Soal TPA</h3>
                 </div>
                 <!-- /widget-header -->
-                <div class="widget-content" id="tombolsoalTWK"></div>
-                <!-- /widget-content --> 
-              </div>
-              <!-- /widget --> 
-
-              <!-- /widget -->
-              <div class="widget widget-nopad">
-                <div class="widget-header"> <i class="icon-search"></i>
-                  <h3> Nomor Soal TKP</h3>
-                </div>
-                <!-- /widget-header -->
-                <div class="widget-content" id="tombolsoalTKP"></div>
+                <div class="widget-content" id="tombolsoalTPA"></div>
                 <!-- /widget-content --> 
               </div>
               <!-- /widget --> 
@@ -193,7 +172,7 @@
 <script src="../assets/js/bootstrap.js"></script>
 <script src="../assets/js/base.js"></script> 
 <script type="text/javascript" src="../assets/js/jqmath-etc-0.4.3.min.js"></script>
-<script type="text/javascript" src="../assets/js/soalSKD.js"></script>
+<script type="text/javascript" src="../assets/js/soalTPA1.js"></script>
 
 <script>      
 
@@ -217,20 +196,14 @@ function pindahsoal(clicked){
    $("#soal"+$(clicked).val()).toggle();
    $("#pilihansoal"+$(clicked).val()).toggle();
 
-   if($(clicked).val() <= 30){
-    $("#headersoal").html("Soal TIU");
-   }else if($(clicked).val() > 30 && $(clicked).val() <= 65){
-    $("#headersoal").html("Soal TWK");
-   }else{
-    $("#headersoal").html("Soal TKP");
-
-   }
    $("#prev").show();
    $("#next").show();
-   if($(clicked).val()==1){
+
+   if($(clicked).val() == 1) {
     $("#prev").hide();
    }
-   if($(clicked).val()==100){
+
+   if($(clicked).val() == 20) {
     $("#next").hide();
    }
 
@@ -247,21 +220,14 @@ function prev() {
    $("#soal"+$("#nosoal"+(soalaktif-1)).val()).toggle();
    $("#pilihansoal"+$("#nosoal"+(soalaktif-1)).val()).toggle();
 
-   if(soalaktif <= 31){
-    $("#headersoal").html("Soal TIU");
-   }else if(soalaktif > 30 && soalaktif < 67){
-    $("#headersoal").html("Soal TWK");
-   }else{
-    $("#headersoal").html("Soal TKP");
-   }
-
    $("#prev").show();
    $("#next").show();
 
-   if($("#nosoal"+(soalaktif-1)).val() == 1){
+   if(soalaktif == 1){
     $("#prev").hide();
    }
-}
+  }
+  
 
 function next() {
   //hide soal sebelumnya
@@ -274,54 +240,28 @@ function next() {
    $("#soal"+$("#nosoal"+(soalaktif+1)).val()).toggle();
    $("#pilihansoal"+$("#nosoal"+(soalaktif+1)).val()).toggle();
 
-   if((soalaktif) < 30){
-    $("#headersoal").html("Soal TIU");
-   }else if((soalaktif) > 29 && (soalaktif) < 65){
-    $("#headersoal").html("Soal TWK");
-   }else{
-    $("#headersoal").html("Soal TKP");
-   }
-
    $("#prev").show();
    $("#next").show();
-   
-   if($("#nosoal"+(soalaktif+1)).val() == 1){
-    $("#prev").hide();
-   }
-   if($("#nosoal"+(soalaktif+1)).val() == $('.soal').length){
+
+   if(soalaktif == ($('.soal').length) - 1){
     $("#next").hide();
    }
 }
 
 //=======================================
-function listsoal (){
-    var data = soal();
+  function listsoal (){
+  var data = soal();
 
-    var btnTIU ="";
-    var btnTWK ="";
-    var btnTKP ="";
+        var btnTPA ="";
 
-    for (var x = 1; x <= data.soal.length; x++) {
-      if(x <= 30 ) { 
-        var angka = (x < 10) ? `0${x}` : x
-        btnTIU += "<button class='btn-soal btn-soalTIU' id='nosoal"+x+"' value="+x+" onClick='pindahsoal(this)'><b>"+angka+"</b></button>";
-      }else if(x>30 && x<66){
-        btnTWK += "<button class='btn-soal btn-soalTWK' id='nosoal"+x+"' value="+x+" onClick='pindahsoal(this)'><b>"+x+"</b></button>";
-      }else{
-        btnTKP += "<button class='btn-soal btn-soalTKP' id='nosoal"+x+"' value="+x+" onClick='pindahsoal(this)'><b>"+x+"</b></button>";
+        for (var x = 1; x<=data.soal.length; x++) {
+            btnTPA += "<button class='btn-soal btn-soalTPA' id='nosoal"+x+"' value="+x+" onClick='pindahsoal(this)'><b>"+x+"</b></button>";
       }
+      $("#tombolsoalTPA").html(btnTPA);
+      $("#tombolsoalTPA").css({"padding": "1rem", "display" : "flex","flex-wrap": "wrap", "justify-content" : "center", "align-items" : "center"});
+      $(".btn-soal").css({"margin": ".25rem", "margin-bottom": ".125rem", "padding":".5rem 1rem","display" : "flex","justify-content": "center" ,"align-items" : "center"});  
 
-    }
-    
-    $("#tombolsoalTIU").html(btnTIU);
-    $("#tombolsoalTWK").html(btnTWK);
-    $("#tombolsoalTKP").html(btnTKP);
-    $("#tombolsoalTIU").css({"padding": "1rem", "display" : "flex","flex-wrap": "wrap", "justify-content" : "center", "align-items" : "center"});
-    $("#tombolsoalTWK").css({"padding": "1rem", "display" : "flex","flex-wrap": "wrap", "justify-content" : "center", "align-items" : "center"});
-    $("#tombolsoalTKP").css({"padding": "1rem", "display" : "flex","flex-wrap": "wrap", "justify-content" : "center", "align-items" : "center"});
-    $(".btn-soal").css({"margin": ".25rem", "margin-bottom": ".125rem", "padding":".5rem 1rem","display" : "flex","justify-content": "center" ,"align-items" : "center"});  
-
-}
+  }
 
 //append btn tanda
 function btntanda(){
@@ -348,7 +288,7 @@ $(document).ready(function() {
     var timer;
     var end;
     var sisa;
-    var waktu = new Date().getTime() + (90*60*1000) + 1000;
+    var waktu = new Date().getTime() + ( 40 * 60 * 1000) + 1000;
 
     function setTimer() {
         localStorage.waktu = waktu;
@@ -396,67 +336,35 @@ $(document).ready(function() {
 //Cek jawaban
 var done = async () => {
     var data = soal();
-    var benarTIU = 0;
-    var salahTIU = 0;
-    var benarTWK = 0;
-    var salahTWK = 0;
-    var kosongTIU = 0;
-    var kosongTWK = 0;
-    var nilaiTKP = 0;
+    var benarTPA = 0;
+    var salahTPA = 0;
+    var kosongTPA = 0;
+
     await localStorage.removeItem('waktu');
 
     for(var x = 0 ; x < data.soal.length ; x++){
-      if(x < 30) {
+     
         if (jawabanUser[x] != null) {
           if (jawabanUser[x] == data.opsi[x][5]) {
-            benarTWK++;
+            benarTPA++;
           }else {
-            salahTWK++;
-          }
-        }
-      else {
-        kosongTWK++;
-      }
-      }// TWK 
-    
-      else if(x >= 30 && x < 65) {
-        if (jawabanUser[x] != null) {
-          if (jawabanUser[x] == data.opsi[x][5]) {
-            benarTIU++;
-          }else {
-            salahTIU++;
+            salahTPA++;
           }
         }else {
-          kosongTIU++;
+          kosongTPA++;
         }
-      }// TIU
-
-      else{
-        if(jawabanUser[x] != null) {
-          nilaiTKP = parseInt(nilaiTKP) + parseInt(jawabanUser[x]);
-        }
-      }
-    
     
     }
-    var totalskorTIU = (benarTIU * 5);
-    localStorage.nilaiTIU = totalskorTIU;
-    localStorage.benarTIU = benarTIU;
-    localStorage.salahTIU = salahTIU;
-    localStorage.kosongTIU = kosongTIU;
-    
-    var totalskorTWK = (benarTWK * 5);
-    localStorage.nilaiTWK = totalskorTWK;
-    localStorage.benarTWK = benarTWK;
-    localStorage.salahTWK = salahTWK;
-    localStorage.kosongTWK = kosongTWK;
 
-    localStorage.nilaiTKP = nilaiTKP;
+    var totalskorTPA = (benarTPA * 5) - salahTPA;
+    localStorage.nilaiTPA = totalskorTPA;
+    localStorage.benarTPA = benarTPA;
+    localStorage.salahTPA = salahTPA;
+    localStorage.kosongTPA = kosongTPA;
 
     await localStorage.removeItem('jawabanUser')
-
-    localStorage.statusSKD = 1
-    await window.location.replace("soalTPA_PKN-STAN.html");
+    localStorage.statusTPA = 1;
+    await window.location.replace("soalTBI_PKN-STAN.html");
 }
 
 var checkboxfunc = () => {
@@ -524,14 +432,14 @@ var checkboxfunc = () => {
   <script> 
     $('body').on('keyup', function(e) {
       if(e.which == 68) {
-        console.log(e.which)
+        // console.log(e.which)
         if($("#next").is(':hidden')) {
           return false
         }
         next()
       } else if(e.which == 65) {
         
-        console.log(e.which)
+        // console.log(e.which)
         if($("#prev").is(':hidden')) {
           return false
         }
@@ -539,9 +447,9 @@ var checkboxfunc = () => {
         prev()
       } else if(e.which == 84) {
         tanda()
-        console.log(e.which)
+        // console.log(e.which)
       }
-      console.log(e.which)
+      // console.log(e.which)
 
      })
   </script>

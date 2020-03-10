@@ -167,10 +167,11 @@
 <script src="../assets/js/base.js"></script> 
 
 <script>
-  if(localStorage.statusSKD) window.location.replace('soalTPATBI_PKN-STAN.html')
+  if(localStorage.statusSKD) window.location.replace('soalTPA_PKN-STAN.html')
 
   function next(url) {
-    url = (localStorage.statusSKD) ? 'soalTPATBI_PKN-STAN.html' : url
+    url = (localStorage.statusSKD) ? 'soalTPA_PKN-STAN.html' : url // if SKD done, instantly go to TPA
+    url = (localStorage.statusTPA) ? 'soalTBI_PKN-STAN.html' : url // if TPA done, instantly go to TBI
 
     window.location.replace(url);
   }
