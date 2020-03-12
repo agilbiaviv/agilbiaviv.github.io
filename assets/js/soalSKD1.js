@@ -77,8 +77,8 @@ function soal(){
 	soalTPA[63] = "Bhinneka Tunggal Ika bermakna “berbeda-beda tetapi tetap satu jua”, yang diambil dari sebuah Kitab Kerajaan Majapahit bernama Kitab Sutasoma yang dikarang oleh …";
 
 	//ss
-    soalTPA[63] = "<img src='../../assets/img/SKD_p-1/64'/>";
-    soalTPA[64] = "<img src='../../assets/img/SKD_p-1/65'/>";
+    // soalTPA[63] = "<img src='../../assets/img/SKD_p-1/64'/>";
+    // soalTPA[64] = "<img src='../../assets/img/SKD_p-1/65'/>";
     soalTPA[65] = "Anda sedang memeriksa berkas-berkas tua dan tanpa sengaja Anda menemukan akta kelahiran Anda yang menyatakan bahwa Anda sebenarnya diadopsi oleh orang tua Anda. Orang tua angkat Anda sendiri sudah begitu tua dan mereka bermaksud supaya Anda tidak mengetahui hal tersebut. Sikap Anda akan hal ini adalah ....";
     soalTPA[66] = "Anda sudah berjanji bertemu dengan orang tua Anda nanti malam, satu jam sebelum pergi, telepon berdering dan teman Anda bertanya apakah Anda tidak keberatan menukar jadwal piket dengannya karena dia ada urusan mendadak, maka ....";
     soalTPA[67] = "Anda adalah seorang dosen di suatu universitas negeri. Anda dituntut melakukan pengajaran, penelitian, dan pengabdian kepada masyarakat sebagaimana diwajibkan melakasanakan Tri Darma Perguruan Tinggi. Pada akhir semester kinerja Anda dinilai atasan tidak terlalu baik dalam mengajar dibandingkan dengan rekan sejawat Anda. Maka sikap Anda ....";
