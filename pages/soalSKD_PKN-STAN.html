@@ -403,7 +403,8 @@ var done = async () => {
     var kosongTIU = 0;
     var kosongTWK = 0;
     var nilaiTKP = 0;
-    await localStorage.removeItem('waktu');
+    
+    localStorage.removeItem('waktu');
 
     for(var x = 0 ; x < data.soal.length ; x++){
       if(x < 30) {
