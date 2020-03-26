@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>OPTIK</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/all.min.css"> <!-- FA -->
+    <link rel="stylesheet" href="../css/datatables.css">
+    <link rel="stylesheet" href="../css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../css/select2.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- js -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/datatables.min.js"></script>
+    <script src="../js/dataTables.bootstrap4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/select2.min.js"></script>
+
+</head>
+<body>
+    <nav class="navbar border-bottom py-2 sticky-top">
+        <a href="" class="navbar-brand px-4" onclick="loadSection('dashboard')">OPTIK</a>
+        
+        <div class="navbar-left border-left border-right">
+            <ul class="nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                        Transaksi
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="" class="dropdown-item" onclick="loadSection('penjualan')">penjualan</a>
+                        <a href="" class="dropdown-item" onclick="loadSection('pembelian')">pembelian</a>
+                        <a href="" class="dropdown-item" onclick="loadSection('pemindahan')">pemindahan barang</a>
+                        <a href="" class="dropdown-item" onclick="loadSection('revisi')">revisi stok</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                        Master
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="" class="dropdown-item" onclick="loadSection('etalase')">etalase</a></li>
+                        <li><a href="" class="dropdown-item" onclick="loadSection('kategori')">kategori barang</a></li>
+                        <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Barang</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'lensa')">Lensa</a></li>
+                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'frame')">Frame</a></li>
+                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'softlense')">Softlense</a></li>
+                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'cairan pembersih softlense')">Cairan Pembersih Softlense</a></li>
+                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'cairan pembersih kacamata')">Cairan Pembersih Kacamata</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="" class="dropdown-item" onclick="loadSection('supplier')">supplier</a></li>
+                        <li><a href="" class="dropdown-item" onclick="loadSection('pengguna')">pengguna</a></li>
+                        <li><a href="" class="dropdown-item" onclick="loadSection('pelanggan')">pelanggan</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="input-group nav-search mr-auto pl-3">
+            <input type="text" class="form-control" placeholder="Search">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="fa fa-search"></i></span>
+            </div>
+        </div>
+
+        <div class="navbar-right pr-3">
+            <ul class="nav">
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link d-inline-block pr-2 border-left" style="text-transform: capitalize;" data-toggle="dropdown" role="button">Jahn Daa</a>
+                    <img src="https://i.pinimg.com/originals/06/b6/cb/06b6cb7858ce9111433415873cc22681.jpg" class="profile-icon" alt="">
+                    <ul class="dropdown-menu">
+                        <li><a href="" class="dropdown-item"><i class="fa fa-power-off"></i> Sign Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid main-panel">
+
+    </div>
+
+    <script>
+        const section = $('.main-panel')
+        const uri = 'http://127.0.0.1:5500/app' //ternyata iki kudu diubah ben modifyState() e work -_-
+        // const uri = 'http://optik.feraan.com/app' //ternyata iki kudu diubah ben modifyState() e work -_-
+        const loadSection = async(page, submenu = '') => {
+            // event.preventDefault()
+            await section.load(`${page}.html`) // `${page}.html` == page + '.html' || wkwkwk
+            await modifyState(page)
+
+            if(submenu != '') {
+                localStorage.kb = submenu
+            }
+        }
+
+        const modifyState = (page) => {
+            let stateObj = { id: "100" }
+            history.replaceState(stateObj, '', `${uri}/index.html?p=${page}`) //iki gawe opo mas? -_- url'e ga berubah.
+        }
+
+        const FIND_URI_PARAMS = (a) => {
+            var query = Array(Array())
+            var vars = window.location.search.substring(1).split("&")
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=")
+                query[(i)] = pair
+            }
+
+            for (var i = 0; i < query.length; i++) {
+                if (query[i][0] === a) {
+                    return query[i][1]
+                }
+            }
+        };
+        // ===========================================
+        p = FIND_URI_PARAMS('p')
+        if (p !== '' && typeof p !== 'undefined') loadSection(p)
+        else loadSection('dashboard')
+    </script>
+
+    <script>
+
+        $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+            if (!$(this).next().hasClass('show')) {
+                $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+            }
+            var $subMenu = $(this).next(".dropdown-menu");
+            $subMenu.toggleClass('show');
+
+            $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+                $('.dropdown-submenu .show').removeClass("show");
+            });
+
+            return false
+        })
+    </script>
+</body>
+</html>
