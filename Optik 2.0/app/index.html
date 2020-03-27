@@ -49,12 +49,12 @@
                         <li><a href="" class="dropdown-item" onclick="loadSection('etalase')">etalase</a></li>
                         <li><a href="" class="dropdown-item" onclick="loadSection('kategori')">kategori barang</a></li>
                         <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Barang</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('lensa')">Lensa</a></li>
-                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('frame')">Frame</a></li>
-                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('softlense')">Softlense</a></li>
-                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('pembersih-softlense')">Cairan Pembersih Softlense</a></li>
-                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('pembersih-kacamata')">Cairan Pembersih Kacamata</a></li>
+                            <ul class="dropdown-menu submenu">
+                                <li><a class="dropdown-item submenu-item" href="" onclick="loadSection('lensa')">Lensa</a></li>
+                                <li><a class="dropdown-item submenu-item" href="" onclick="loadSection('frame')">Frame</a></li>
+                                <li><a class="dropdown-item submenu-item" href="" onclick="loadSection('softlense')">Softlense</a></li>
+                                <li><a class="dropdown-item submenu-item" href="" onclick="loadSection('pembersih-softlense')">Cairan Pembersih Softlense</a></li>
+                                <li><a class="dropdown-item submenu-item" href="" onclick="loadSection('pembersih-kacamata')">Cairan Pembersih Kacamata</a></li>
                             </ul>
                         </li>
                         <li><a href="" class="dropdown-item" onclick="loadSection('supplier')">supplier</a></li>
@@ -141,6 +141,20 @@
 
             return false
         })
+
+        $('ul.nav li.dropdown').hover(function() {
+            $(this).find('.dropdown-menu:not(.submenu)').stop(true, true).fadeIn(300)
+        }, function() {
+            $(this).find('.dropdown-menu:not(.submenu)').stop(true, true).fadeOut(300);
+        })
+
+        $('.dropdown-submenu').hover(function() {
+            $(this).find('.submenu').stop(true, true).fadeIn(300)
+        }, function() {
+            $(this).find('.submenu').stop(true, true).fadeOut(300);
+        })
+
+
     </script>
 </body>
 </html>
