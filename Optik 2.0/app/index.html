@@ -50,11 +50,11 @@
                         <li><a href="" class="dropdown-item" onclick="loadSection('kategori')">kategori barang</a></li>
                         <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Barang</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'lensa')">Lensa</a></li>
-                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'frame')">Frame</a></li>
-                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'softlense')">Softlense</a></li>
-                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'cairan pembersih softlense')">Cairan Pembersih Softlense</a></li>
-                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'cairan pembersih kacamata')">Cairan Pembersih Kacamata</a></li>
+                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('lensa')">Lensa</a></li>
+                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('frame')">Frame</a></li>
+                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('softlense')">Softlense</a></li>
+                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('pembersih-softlense')">Cairan Pembersih Softlense</a></li>
+                                <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('pembersih-kacamata')">Cairan Pembersih Kacamata</a></li>
                             </ul>
                         </li>
                         <li><a href="" class="dropdown-item" onclick="loadSection('supplier')">supplier</a></li>
@@ -89,18 +89,16 @@
     </div>
 
     <script>
+        if(localStorage.kb) localStorage.removeItem('kb')
+
         const section = $('.main-panel')
         const uri = 'http://127.0.0.1:5500/app' //ternyata iki kudu diubah ben modifyState() e work -_-
         // const uri = 'https://agilbiaviv.github.io/Optik%202.0/app' //ternyata iki kudu diubah ben modifyState() e work -_-
         // const uri = 'http://optik.feraan.com/app' //ternyata iki kudu diubah ben modifyState() e work -_-
-        const loadSection = async(page, submenu = '') => {
+        const loadSection = async(page) => {
             // event.preventDefault()
             await section.load(`${page}.html`) // `${page}.html` == page + '.html' || wkwkwk
             await modifyState(page)
-
-            if(submenu != '') {
-                localStorage.kb = submenu
-            }
         }
 
         const modifyState = (page) => {
