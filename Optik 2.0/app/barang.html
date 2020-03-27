@@ -106,12 +106,12 @@
                             <thead>
                                 <tr>
                                     <th>NAMA BARANG</th>
-                                    <th class="none">SUPPLIER</th>
-                                    <th class="none">KATEGORI</th>
-                                    <th class="lensa none d-none">sph</th>
-                                    <th class="lensa none d-none">cyl</th>
-                                    <th class="lensa none d-none">dim</th>
-                                    <th class="lensa none d-none">rl</th>
+                                    <th>SUPPLIER</th>
+                                    <th>KATEGORI</th>
+                                    <th>sph</th>
+                                    <th>cyl</th>
+                                    <th>dim</th>
+                                    <th>rl</th>
                                     <th>HARGA BELI</th>
                                     <th>STOK</th>
                                     <th></th>
@@ -129,11 +129,11 @@
                                     <td>Rp. 600.000</td>
                                     <td>5</td>
                                     <td>
-                                        <a href="#" class="btn btn-small btn-warning btn-icon rounded-circle">
-                                            <div title="Edit" class="d-flex justify-content-center align-items-center h-100">Edit</div>
+                                        <a href="#" class="btn btn-small btn-warning">
+                                            <div title="Edit" class="d-flex justify-content-center align-items-center h-100 text-white">Edit</div>
                                         </a>
-                                        <a href="#" class="btn btn-small btn-danger btn-icon rounded-circle">
-                                            <div title="Delete" class="d-flex justify-content-center align-items-center h-100">Delete</div>
+                                        <a href="#" class="btn btn-small btn-danger">
+                                            <div title="Delete" class="d-flex justify-content-center align-items-center h-100 text-white">Delete</div>
                                         </a>
                                     </td>
                                 </tr>
@@ -148,11 +148,11 @@
                                     <td>Rp. 300.000</td>
                                     <td>5</td>
                                     <td>
-                                        <a href="#" class="btn btn-small btn-warning btn-icon rounded-circle">
-                                            <div title="Edit" class="d-flex justify-content-center align-items-center h-100">Edit</div>
+                                        <a href="#" class="btn btn-small btn-warning">
+                                            <div title="Edit" class="d-flex justify-content-center align-items-center h-100 text-white">Edit</div>
                                         </a>
-                                        <a href="#" class="btn btn-small btn-danger btn-icon rounded-circle">
-                                            <div title="Delete" class="d-flex justify-content-center align-items-center h-100">Delete</div>
+                                        <a href="#" class="btn btn-small btn-danger">
+                                            <div title="Delete" class="d-flex justify-content-center align-items-center h-100 text-white">Delete</div>
                                         </a>
                                     </td>
                                 </tr>
@@ -167,7 +167,23 @@
 
 <script>
     $(document).ready((e) => {
+
+        var hiddenCol = [1, 2] // to hide col
+
+        switch(localStorage.kb) {
+
+            case 'lensa' :
+                $('.lensa').removeClass('d-none')
+            break;
+
+            default :
+                hiddenCol.push(3, 4, 5, 6)
+            break;
+        }
+
         $('.select2').select2() //initialize select2
+
+
         $('#datatable1').dataTable({
             "responsive": false,
             "language": {
@@ -179,27 +195,20 @@
             },
             "columnDefs": [
                 {
-                    "targets": [ 1, 2 ],
+                    "targets": hiddenCol,
                     "visible": false,
                 },
                 {
-                    "targets": [ 1, 2, 4, -1 ],
+                    "targets": [ 1, 2, -1 ],
                     "orderable": false,
                     "searchable": false
                 }
             ],
 
-        }) //initialize datatable
-
-        switch(localStorage.kb) {
-
-            case 'lensa' :
-                $('.lensa').removeClass('d-none')
-                $('.lensa').removeClass('none')
-            break;
-        }
+        }) //initialize datatable        
 
         $('input[name=kategori-barang]').val(localStorage.kb) // set kategori barang sesuai menu yang dipilih
         $('.brg').text(localStorage.kb)
+
     })
 </script>
