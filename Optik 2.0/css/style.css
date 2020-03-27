@@ -271,3 +271,18 @@ div.dataTables_length label {
 .form-control {
     text-transform: uppercase;
 }
+
+@media (min-width: 992px) {
+    .modal-xl {
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 1200px){
+    .modal-xl {
+        max-width: 1140px;
+    }
+}
+
+
+

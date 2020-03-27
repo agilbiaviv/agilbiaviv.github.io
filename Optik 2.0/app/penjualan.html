@@ -257,11 +257,11 @@
 
                             <div class="form-row">
                                 <div class="form-group col-12">
-                                    <button class="btn btn-info btn-block to-uppercase" style="letter-spacing: 2px;">Proses</button>
+                                    <button type="button" data-toggle="modal" data-target="#kartu_kontrol" data-backdrop="static" class="btn btn-warning btn-block to-uppercase" style="letter-spacing: 2px;">Edit Kartu kontrol</button>
                                 </div>
 
                                 <div class="form-group col-12">
-                                    <button class="btn btn-warning btn-block to-uppercase" style="letter-spacing: 2px;">Edit Kartu kontrol</button>
+                                    <button type="submit" class="btn btn-info btn-block to-uppercase" style="letter-spacing: 2px;">Proses</button>
                                 </div>
 
                                 <div class="form-group col-6">
@@ -279,6 +279,28 @@
 
                 </div>
 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="kartu_kontrol" tabindex="-1" role="dialog" aria-labelledby="kartu_kontrol" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="kartu_kontrol">Data Kontrol</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
