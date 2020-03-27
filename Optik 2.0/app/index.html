@@ -64,7 +64,7 @@
                 </li>
             </ul>
         </div>
-        <div class="input-group nav-search mr-auto pl-3">
+        <div class="input-group nav-search mr-auto pl-3 d-none d-md-flex">
             <input type="text" class="form-control" placeholder="Search">
             <div class="input-group-append">
                 <span class="input-group-text"><i class="fa fa-search"></i></span>
@@ -92,8 +92,8 @@
         if(localStorage.kb) localStorage.removeItem('kb')
 
         const section = $('.main-panel')
-        // const uri = 'http://127.0.0.1:5500/app' //ternyata iki kudu diubah ben modifyState() e work -_-
-        const uri = 'https://agilbiaviv.github.io/Optik%202.0/app' //ternyata iki kudu diubah ben modifyState() e work -_-
+        const uri = 'http://127.0.0.1:5500/app' //ternyata iki kudu diubah ben modifyState() e work -_-
+        // const uri = 'https://agilbiaviv.github.io/Optik%202.0/app' //ternyata iki kudu diubah ben modifyState() e work -_-
         // const uri = 'http://optik.feraan.com/app' //ternyata iki kudu diubah ben modifyState() e work -_-
         const loadSection = async(page) => {
             // event.preventDefault()

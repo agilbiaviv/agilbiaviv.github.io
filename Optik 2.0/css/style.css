@@ -201,7 +201,8 @@ div.dataTables_wrapper div.dataTables_length label {
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.selection > .select2-selection.select2-selection--single .select2-selection__placeholder {
+.selection > .select2-selection.select2-selection--single .select2-selection__placeholder,
+.select2-container--default .select2-selection--single .select2-selection__rendered {
     color: #000;
 }
 
@@ -249,4 +250,24 @@ div.dataTables_length label {
 /* utilities */
 .text-white {
     color: white!important;
+}
+
+.to-uppercase {
+    text-transform: uppercase;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.form-control {
+    text-transform: uppercase;
 }

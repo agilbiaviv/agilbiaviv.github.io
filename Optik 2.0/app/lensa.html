@@ -70,23 +70,23 @@
 
                         <div class="form-group col-md-6 row">
                             <div class="form-group col-md-12 m-0">
-                            <label class="form-control-label">RL: <span class="text-danger">*</span></label>
+                                <label class="form-control-label d-block">RL: <span class="text-danger">*</span></label>
+                                <div class="custom-control custom-checkbox custom-control-inline">
+                                    <input type="radio" id="rl" name="rl" class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="rl">r/l</label>
+                                </div>
+        
+                                <div class="custom-control  custom-checkbox custom-control-inline ml-3">
+                                    <input type="radio" id="r" name="rl" class="custom-control-input">
+                                    <label class="custom-control-label" for="r">r</label>
+                                </div>
+        
+                                <div class="custom-control  custom-checkbox custom-control-inline ml-3">
+                                    <input type="radio" id="l" name="rl" class="custom-control-input">
+                                    <label class="custom-control-label" for="l">l</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="custom-control custom-radio custom-control-inline ml-3">
-                            <input type="radio" id="rl" name="rl" class="custom-control-input" checked>
-                            <label class="custom-control-label" for="rl">r/l</label>
-                        </div>
-
-                        <div class="custom-control custom-radio custom-control-inline ml-3">
-                            <input type="radio" id="r" name="rl" class="custom-control-input">
-                            <label class="custom-control-label" for="r">r</label>
-                        </div>
-
-                        <div class="custom-control custom-radio custom-control-inline ml-3">
-                            <input type="radio" id="l" name="rl" class="custom-control-input">
-                            <label class="custom-control-label" for="l">l</label>
-                        </div>
-
                         <div class="col-12 d-flex justify-content-center mt-3">
                             <button class="btn btn-info mx-auto w-50 custom-btn">Simpan</button>
                         </div>
@@ -160,35 +160,33 @@
 </div>
 
 <script>
-    $(document).ready((e) => {
 
 
-        $('.select2').select2() //initialize select2
+    $('.select2').select2() //initialize select2
 
-        var hiddenCol = [1, 2] // to hide col
+    var hiddenCol = [1, 2] // to hide col
 
-        $('#datatable1').dataTable({
-            "responsive": false,
-            "language": {
-                "lengthMenu": "Menampilkan _MENU_ data tiap halaman",
-                "zeroRecords": "Data tidak ditemukan",
-                "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
-                "infoEmpty": "Tidak ada data",
-                "infoFiltered": "(Dari _MAX_ total data)"
+    $('#datatable1').dataTable({
+        "responsive": false,
+        "language": {
+            "lengthMenu": "Menampilkan _MENU_ data tiap halaman",
+            "zeroRecords": "Data tidak ditemukan",
+            "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+            "infoEmpty": "Tidak ada data",
+            "infoFiltered": "(Dari _MAX_ total data)"
+        },
+        "columnDefs": [
+            {
+                "targets": hiddenCol,
+                "visible": false,
             },
-            "columnDefs": [
-                {
-                    "targets": hiddenCol,
-                    "visible": false,
-                },
-                {
-                    "targets": [ 1, 2, -1 ],
-                    "orderable": false,
-                    "searchable": false
-                }
-            ],
+            {
+                "targets": [ 1, 2, -1 ],
+                "orderable": false,
+                "searchable": false
+            }
+        ],
 
-        }) //initialize datatable        
+    }) //initialize datatable        
 
-    })
 </script>
