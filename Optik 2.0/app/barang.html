@@ -75,6 +75,11 @@
                                     <label class="form-control-label">RL: <span class="text-danger">*</span></label>
                                 </div>
                                 <div class="custom-control custom-radio custom-control-inline ml-3">
+                                    <input type="radio" id="rl" name="rl" class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="rl">r/l</label>
+                                </div>
+
+                                <div class="custom-control custom-radio custom-control-inline ml-3">
                                     <input type="radio" id="r" name="rl" class="custom-control-input">
                                     <label class="custom-control-label" for="r">r</label>
                                 </div>
@@ -84,10 +89,6 @@
                                     <label class="custom-control-label" for="l">l</label>
                                 </div>
 
-                                <div class="custom-control custom-radio custom-control-inline ml-3">
-                                    <input type="radio" id="rl" name="rl" class="custom-control-input">
-                                    <label class="custom-control-label" for="rl">r/l</label>
-                                </div>
                             </div>
 
                         </div> <!-- lensa -->
@@ -107,8 +108,10 @@
                                     <th>NAMA BARANG</th>
                                     <th class="none">SUPPLIER</th>
                                     <th class="none">KATEGORI</th>
-                                    <th>JENIS</th>
-                                    <th>UKURAN</th>
+                                    <th class="lensa none">sph</th>
+                                    <th class="lensa none">cyl</th>
+                                    <th class="lensa none">dim</th>
+                                    <th class="lensa none">rl</th>
                                     <th>HARGA BELI</th>
                                     <th>STOK</th>
                                     <th></th>
@@ -117,10 +120,12 @@
                             <tbody>
                                 <tr>
                                     <td>MERK AMNV</td>
+                                    <td> SUPPLIER C</td>
                                     <td><span class="brg"></span></td>
-                                    <td>SUPPLIER C</td>
-                                    <td>-</td>
-                                    <td>--</td>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>2</td>
+                                    <td>r/l</td>
                                     <td>Rp. 600.000</td>
                                     <td>5</td>
                                     <td>
@@ -134,10 +139,12 @@
                                 </tr>
                                 <tr>
                                     <td>PROG SHORT CORRIDOR MC</td>
-                                    <td>LENSA</td>
                                     <td>SUPPLIER A</td>
-                                    <td>PLANO</td>
-                                    <td>-0.75</td>
+                                    <td><span class="brg"></span></td>
+                                    <td>0</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>l</td>
                                     <td>Rp. 300.000</td>
                                     <td>5</td>
                                     <td>
@@ -163,6 +170,13 @@
         $('.select2').select2() //initialize select2
         $('#datatable1').dataTable({
             "responsive": false,
+            "language": {
+                "lengthMenu": "Menampilkan _MENU_ data tiap halaman",
+                "zeroRecords": "Data tidak ditemukan",
+                "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                "infoEmpty": "Tidak ada data",
+                "infoFiltered": "(Dari _MAX_ total data)"
+            }
             "columnDefs": [
                 {
                     "targets": [ 1, 2 ],
@@ -180,7 +194,8 @@
         switch(localStorage.kb) {
 
             case 'lensa' :
-                $('div.lensa').removeClass('d-none')
+                $('.lensa').removeClass('d-none')
+                $('.lensa').removeClass('none')
             break;
         }
 
