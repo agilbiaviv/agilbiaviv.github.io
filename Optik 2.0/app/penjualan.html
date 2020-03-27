@@ -256,9 +256,6 @@
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-12">
-                                    <button type="button" data-toggle="modal" data-target="#kartu_kontrol" data-backdrop="static" class="btn btn-warning btn-block to-uppercase" style="letter-spacing: 2px;">Edit Kartu kontrol</button>
-                                </div>
 
                                 <div class="form-group col-12">
                                     <button type="submit" class="btn btn-info btn-block to-uppercase" style="letter-spacing: 2px;">Proses</button>
@@ -274,6 +271,14 @@
 
                             </div>
 
+                            <hr>
+
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <button type="button" data-toggle="modal" data-target="#kartu_kontrol" data-backdrop="static" class="text-white btn btn-warning btn-block to-uppercase" style="letter-spacing: 2px;">Edit Kartu kontrol</button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
@@ -282,6 +287,87 @@
             </div>
         </div>
     </div>
+
+    <div class="col-6 print_preview-kontrol printable">
+        <table class="mb-3 unbordered">
+            <tr>
+                <td>Resep Dr.</td>
+                <td>:</td>
+                <td><span id="resep_kontrol">DASDAS</span></td>
+            </tr>
+
+            <tr>
+                <td>Tanggal</td>
+                <td>:</td>
+                <td><span id="tanggal_kontrol">05-11-1996</span></td>
+            </tr>
+
+            <tr>
+                <td>Date</td>
+                <td>:</td>
+                <td><span id="data_kontrol">0087678</span></td>
+            </tr>
+
+        </table>
+        
+        <table class="table table-bordered mb-0">
+            <thead>
+                <tr>
+                    <th colspan="2">Spherical</th>
+                    <th>Cylinder</th>
+                    <th>As</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 10%; text-align: center;">OD</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="width: 10%; text-align: center;">OS</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+        <table class="table table-bordered mb-3">
+            <tr>
+                <td style="width: 9%; border: none"></td>
+                <td style="border-top: none; text-align: left; width: 40%;">Add +</td>
+                <td style="border-top: none; text-align: left; width: 40%;">PD <span class="float-right">m/m</span></td>
+            </tr>
+        </table>
+
+        <table class="unbordered">
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td><span id="nama_kontrol">jahn daa Moeda</span></td>
+            </tr>
+
+            <tr>
+                <td>Alamat</td>
+                <td>:</td>
+                <td><span id="alamat_kontrol">Imam bonjol</span></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td><span id="telp_kontrol">086253772899</span><span> </span><span id="kota_kontrol">Jember</span></td>
+            </tr>
+
+        </table>
+
+    </div>
+
 </div>
 
 
@@ -289,18 +375,109 @@
 <div class="modal fade" id="kartu_kontrol" tabindex="-1" role="dialog" aria-labelledby="kartu_kontrol" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="kartu_kontrol">Data Kontrol</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="modal-header bg-info">
+                <h5 class="modal-title text-white" id="kartu_kontrol">Data Kontrol</h5>
             </div>
             <div class="modal-body">
-                ...
+                <div class="container-fluid">
+                    <div class="card card-body">
+                        <div class="form-row">
+
+                            <div class="form-group col-12 col-md-6">
+                                <label class="form-control-label">Resep: </label>
+                                <input type="text"  name="resep_kontrol" class="form-control">
+                            </div>
+
+                            <div class="form-group col-12 col-md-6">
+                                <label class="form-control-label">Tanggal: </label>
+                                <input type="date"  name="tanggal_kontrol" class="form-control">
+                            </div>
+
+                            <div class="form-group col-12">
+                                <label class="form-control-label">Data: </label>
+                                <textarea type="text"  name="data_kontrol" class="form-control"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group form-row col-6 col-md-4">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <label class="form-control-label">SPh: </label>
+                                </div>
+
+                                <div class="form-group col-12 form-row d-flex space-around align-items-center">
+                                     <input type="number" name="sph_kanan" class="form-control d-inline-block col-6 m-2" placeholder="kanan">
+                                     <input type="number" name="sph_kiri" class="form-control d-inline-block col-6 m-2" placeholder="kiri">
+                                </div>
+                            </div>
+
+                            <div class="form-group form-row col-6 col-md-4">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <label class="form-control-label">Cyl: </label>
+                                </div>
+
+                                <div class="form-group col-12 form-row d-flex space-around align-items-center">
+                                     <input type="number" name="cyl_kanan" class="form-control d-inline-block col-6 m-2" placeholder="kanan">
+                                     <input type="number" name="cyl_kiri" class="form-control d-inline-block col-6 m-2" placeholder="kiri">
+                                </div>
+                            </div>
+
+                            <div class="form-group form-row col-6 col-md-4">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <label class="form-control-label">Ass: </label>
+                                </div>
+
+                                <div class="form-group col-12 form-row d-flex space-around align-items-center">
+                                     <input type="number" name="ass_kanan" class="form-control d-inline-block col-6 m-2" placeholder="kanan">
+                                     <input type="number" name="ass_kiri" class="form-control d-inline-block col-6 m-2" placeholder="kiri">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label class="form-control-label">Add: </label>
+                                <input type="text"  name="add_kontrol" class="form-control">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <label class="form-control-label">PD: </label>
+                                <input type="text"  name="pd_kontrol" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-6">
+                                <label class="form-control-label">Nama: </label>
+                                <input type="text" name="nama_kontrol" class="form-control">
+                            </div>
+
+                            <div class="form-group col-12 col-md-6">
+                                <label class="form-control-label">Alamat: </label>
+                                <input type="text"  name="alamat_kontrol" class="form-control">
+                            </div>
+
+                            <div class="form-group col-12 col-md-6">
+                                <label class="form-control-label">No. Telp: </label>
+                                <input type="text"  name="telp_kontrol" class="form-control">
+                            </div>
+
+                            <div class="form-group col-12 col-md-6">
+                                <label class="form-control-label">Kota: </label>
+                                <input type="text"  name="kota_kontrol" class="form-control">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" id="print-kartu_kontrol" class="btn btn-info px-5 bold to-uppercase" style="letter-spacing: 2px;">Print</button>
+                <button type="button" class="btn btn-secondary px-5 bold to-uppercase" style="letter-spacing: 2px;" data-dismiss="modal">Batal</button>
             </div>
         </div>
     </div>
@@ -309,4 +486,10 @@
 <script>
     $('.select2').select2() //initialize select2
 
+    $('#print-kartu_kontrol').on('click', (e) => {
+        $('.print_preview-kontrol').addClass('printable')
+        console.log($('.print_preview-kontrol').attr('class'))
+        window.print()
+
+    })
 </script>
