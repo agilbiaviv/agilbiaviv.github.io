@@ -1,0 +1,113 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-2">
+            <div class="card-body">
+                <h3>Form Pengguna</h3>
+                <div class="card card-body">
+                    <div class="form-row">
+
+                        <div class="form-group col-12 col-md-6">
+                            <label class="form-control-label">Nama Pengguna: <span class="text-danger">*</span></label>
+                            <input class="form-control" type="text" name="nama" value="" placeholder="Masukkan Nama Pengguna">
+                        </div>
+
+                        <div class="form-group col-12 col-md-6">
+                            <label class="form-control-label">Level: <span class="text-danger">*</span></label>
+                            <select class="form-control select2" data-placeholder="PILIH Level Pengguna">
+                                <option label="PILIH Level Pengguna"></option>
+                                <option value="0">Pemilik</option>
+                                <option value="1">Karyawan</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-12 col-md-4">
+                            <label class="form-control-label">Username: <span class="text-danger">*</span></label>
+                            <input class="form-control" autocomplete="off" type="text" name="username" value="" placeholder="Masukkan Username e.g: JahnDaa">
+                        </div>
+
+                        <div class="form-group col-12 col-md-4">
+                            <label class="form-control-label">Password: <span class="text-danger">*</span></label>
+                            <input class="form-control" type="password" name="password" value="" placeholder="Masukkan Password">
+                        </div>
+                        <div class="form-group col-12 col-md-4">
+                            <label class="form-control-label">Konfirmasi Password: <span class="text-danger">*</span></label>
+                            <input class="form-control" type="password" name="c_password" value="" placeholder="Masukkan Passwrod">
+                        </div>
+                        
+                        
+                        
+                    </div>
+
+                    <button class="btn btn-info custom-btn col-12 col-md-6 mx-auto">Simpan</button>
+                </div>
+                <h3 class="mt-2 d-inline-block">Daftar Pengguna</h3>
+
+                <div class="card card-body">
+                    <div class="table-wrapper">
+                        <table id="datatable1" class="table table-striped table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nama Pengguna</th>
+                                    <th>username</th>
+                                    <th>password</th>
+                                    <th>Level</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jahn daa</td>
+                                    <td>JahnDaa</td>
+                                    <td>********</td>
+                                    <td>Pemilik</td>
+                                    <td style="width: 18%">
+                                        <button class="btn btn-warning custom-btn text-white">Ubah</button>
+                                        <button class="btn btn-danger custom-btn">Hapus</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Rohn Doo</td>
+                                    <td>RohnDoo</td>
+                                    <td>********</td>
+                                    <td>Karyawan</td>
+                                    <td style="width: 18%">
+                                        <button class="btn btn-warning custom-btn text-white">Ubah</button>
+                                        <button class="btn btn-danger custom-btn">Hapus</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- table wrapper-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready((e) => {
+
+
+        $('.select2').select2() //initialize select2
+
+        $('#datatable1').dataTable({
+            "responsive": false,
+            "language": {
+                "lengthMenu": "Menampilkan _MENU_ data tiap halaman",
+                "zeroRecords": "Data tidak ditemukan",
+                "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                "infoEmpty": "Tidak ada data",
+                "infoFiltered": "(Dari _MAX_ total data)"
+            },
+            "columnDefs": [
+                {
+                    "targets" : -1,
+                    "searchable" : false,
+                    "orderable": false
+                }
+            ]
+
+        }) //initialize datatable        
+
+    })
+</script>

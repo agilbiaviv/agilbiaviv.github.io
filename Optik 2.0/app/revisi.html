@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card mb-2">
+            <div class="card-body">
+                <h3>Form Revisi Stok</h3>
+                <div class="card card-body">
+                    <div class="row">
+
+                        <div class="col-6 col-md-5">
+                            <div class="form-row">
+
+                                <div class="form-group col-12">
+                                    <label class="form-control-label">Barang: <span class="text-danger">*</span></label>
+                                    <select class="form-control select2" data-placeholder="PILIH Barang">
+                                        <option label="PILIH Barang"></option>
+                                        <option value="latihan">[Frame] Lorem ipsum dolor sit amet.</option>
+                                        <option value="latihan">[Frame] Lorem, ipsum dolor.</option>
+                                        <option value="tryout">[Lensa] Lorem ipsum dolor sit amet consectetur.</option>
+                                        <option value="latihan">[softlense] Lorem ipsum dolor sit.</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-12">
+                                    <label class="form-control-label">Jumlah Awal: <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="number" name="j_lama" value="" placeholder="Masukkan Jumlah Awal">
+                                </div>
+
+                                
+                                <div class="form-group col-12">
+                                    <label class="form-control-label">Jumlah Baru: <span class="text-danger">*</span></label>
+                                    <input class="form-control" type="number" name="j_baru" value="" placeholder="Masukkan Jumlah Baru">
+                                </div>
+                                
+                                <div class="form-group col-12">
+                                    <label class="form-control-label">Keterangan: <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" name="ket" value="" placeholder="Masukkan Keterangan"></textarea>
+                                </div>
+                            
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-7">
+                            <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Supplier</th>
+                                        <th>Barang</th>
+                                        <th>Jumlah</th>
+                                        <th>Kode harga</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Supplier A</td>
+                                        <td>[Lensa] Lorem ipsum dolor sit amet consectetur.</td>
+                                        <td>10</td>
+                                        <td>RIPXXI</td>
+                                        <td>
+                                            <button class="btn btn-danger custom-btn">Hapus</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="form-group">
+                                <button class="btn btn-block btn-info cutom-btn">Simpan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-2 d-inline-block">Daftar Pembelian</h3>
+
+                <div class="card card-body">
+                    <div class="table-wrapper">
+                        <table id="datatable1" class="table table-striped table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Tanggal Pembelian</th>
+                                    <th>SUPPLIER</th>
+                                    <th>Jumlah Item</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>05-11-2019</td>
+                                    <td>SUPPLIER C</td>
+                                    <td>90</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- table wrapper-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready((e) => {
+
+
+        $('.select2').select2() //initialize select2
+
+        $('#datatable1').dataTable({
+            "responsive": false,
+            "language": {
+                "lengthMenu": "Menampilkan _MENU_ data tiap halaman",
+                "zeroRecords": "Data tidak ditemukan",
+                "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                "infoEmpty": "Tidak ada data",
+                "infoFiltered": "(Dari _MAX_ total data)"
+            }
+
+        }) //initialize datatable        
+
+    })
+</script>
