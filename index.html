@@ -357,6 +357,7 @@
 
     <script src="../assets/js/jquery-1.7.2.min.js"></script>
     <script>
+        localStorage.removeItem('login-status')
         $('.overlay').hide()
         $('.alert-box').hide()
       
@@ -386,6 +387,7 @@
         var check = t => {
             if($('#pass').val() == $('#checker').val()){
                 console.log('it\'s a match!')
+                localStorage.setItem('login-status','1')
                 window.location.href =  $(t).data('u') 
             } else {
                 alertShow()
