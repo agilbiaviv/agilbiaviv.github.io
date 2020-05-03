@@ -1,0 +1,62 @@
+[
+    {
+        "soal" : "My sister bought two books in Gramedia Bookstore. One book is English and … is Math.",
+        "jawaban" : [ "another", "other", "the other", "others" ],
+        "kunci" : "the other"
+    },
+    {
+        "soal" : "The examination is intended to test participants’ ability to understand spoken English, to read nontechnical language, and …",
+        "jawaban" : [ "write with correctly", "writing correctly", "correct writing", "to write correctly"],
+        "kunci": "to write correctly"
+    },
+    {
+        "soal" : "Among the students will the club captain … by the teacher.",
+        "jawaban" : [ "choose", "chosen", "is chosen", "be chosen" ],
+        "kunci" : "be chosen"
+    },
+    {
+        "soal" : "Not only … places of beauty, but they also serve scientific and educational purposes as well.",
+        "jawaban" : [ "are botanical gardens", "botanical gardens to be", "to be botanical gardens", "botanical gardens are"],
+        "kunci" : "are botanical gardens"
+    },
+    {
+        "soal" : "I’m so confused why he opened the envelope with … hand.",
+        "jawaban" : [ "tremble", "trembling", "trembled", "is trembling" ],
+        "kunci" : "trembling"
+    },
+    {
+        "soal" : "My brother and his friends are … brilliant young men that they can complete their task on time.",
+        "jawaban" : [ "such a", "to", "such", "so" ],
+        "kunci" : "such"
+    },
+    {
+        "soal" : "Sasa can answer every question in the whiteboard correctly. She must be feeling … right now.",
+        "jawaban" : [ "smartly", "smart", "is smart", "outsmart"],
+        "kunci" : "smart"
+    },
+    {
+        "soal" : "She is so happy after getting … from his boyfriend.",
+        "jawaban" : [ "a beautiful small magenta leather bag", "a small leather beautiful magenta bag", "a beautiful bag small magenta leather", "a leather bag small beautiful magenta"],
+        "kunci" : "a beautiful small magenta leather bag"
+    },
+    {
+        "soal" : "The chairwoman requested that …",
+        "jawaban" : [ "the participants studied more careful the problem", "the participants study the problem more carefully", "the participants studied the problem with more careful", "the participants to study the problem more carefully"],
+        "kunci" : "the participants study the problem more carefully"
+    },
+    {
+        "soal" : "The article stated … this solution was flammable.",
+        "jawaban" : [ "if", "whether", "what", "that"],
+        "kunci" : "that"
+    },
+    {
+        "soal" : "Jane … her work by the end of this week.",
+        "jawaban" : [ "will do", "will have done", "will be doing", "will have been done"],
+        "kunci" : "will have done"
+    },
+    {
+        "soal" : "Thunderstorms most frequently form and develop within areas … at mid-latitude when warm moist air collides with cooler air.",
+        "jawaban" : [ "locate", "located", "locating", "locates"],
+        "kunci" : "located"
+    }
+]
