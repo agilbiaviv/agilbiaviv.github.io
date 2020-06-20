@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <meta name="twitter:site" content="@themepixels">
+        <meta name="twitter:creator" content="@themepixels">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Bracket">
+        <meta name="twitter:description" content="Premium Quality and Responsive UI for Dashboard.">
+        <meta name="twitter:image" content="http://themepixels.me/bracket/img/bracket-social.png">
+
+        <meta property="og:url" content="http://themepixels.me/bracket">
+        <meta property="og:title" content="Bracket">
+        <meta property="og:description" content="Premium Quality and Responsive UI for Dashboard.">
+
+        <meta property="og:image" content="http://themepixels.me/bracket/img/bracket-social.png">
+        <meta property="og:image:secure_url" content="http://themepixels.me/bracket/img/bracket-social.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="600">
+
+        <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
+        <meta name="author" content="ThemePixels">
+
+        <title>OPTIK</title>
+
+        <link href="../lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <link href="../lib/Ionicons/css/ionicons.css" rel="stylesheet">
+        <link href="../lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+        <link href="../lib/jquery-switchbutton/jquery.switchButton.css" rel="stylesheet">
+        <link href="../lib/highlightjs/github.css" rel="stylesheet">
+        <link href="../lib/datatables/jquery.dataTables.css" rel="stylesheet">
+        <link href="../lib/select2/css/select2.min.css" rel="stylesheet">
+        <link href="../lib/medium-editor/medium-editor.css" rel="stylesheet">
+        <link href="../lib/medium-editor/default.css" rel="stylesheet">
+        <link href="../lib/summernote/summernote-bs4.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="../css/bracket.css">
+
+        <!-- revisi -->
+        <link rel="stylesheet" href="../css/style.css">
+        <!-- =============== -->
+
+        <script src="../lib/jquery/jquery.js"></script>
+        <script src="../lib/popper.js/popper.js"></script>
+        <script src="../lib/bootstrap/bootstrap.js"></script>
+        <script src="../lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+        <script src="../lib/moment/moment.js"></script>
+        <script src="../lib/jquery-ui/jquery-ui.js"></script>
+        <script src="../lib/jquery-switchbutton/jquery.switchButton.js"></script>
+        <script src="../lib/peity/jquery.peity.js"></script>
+        <script src="../lib/highlightjs/highlight.pack.js"></script>
+        <script src="../lib/datatables/jquery.dataTables.js"></script>
+        <script src="../lib/datatables-responsive/dataTables.responsive.js"></script>
+        <script src="../lib/select2/js/select2.min.js"></script>
+        <script src="../lib/summernote/summernote-bs4.min.js"></script>
+        <script src="../lib/medium-editor/medium-editor.js"></script>
+
+        <script src="../js/bracket.js"></script>
+
+
+
+        <!-- <script>
+            document.addEventListener("offline", onOffline, false)
+            var onOffline = () => window.location.replace('offline.html')
+            if(!navigator.onLine) onOffline()
+            if(localStorage.getItem('login-status') == null) window.location.replace('login.html')
+        </script> -->
+        <style>
+        .br-menu-item, .br-pagebody, h6 {
+            font-size: 1rem;
+            /* font-size: .95rem; */
+            /* font-size: .85rem; */
+        }
+        .form-control, .dataTables_filter input {
+            padding: 0.5rem 0.5rem;
+            font-size: 1rem;
+            /* padding: 0.65rem 0.75rem; */
+            /* font-size: 0.875rem; */
+        }
+        .br-menu-item {
+            padding: 0 5px;
+        }
+        .br-sideleft {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        .sidebar-label {
+            font-size: .85rem;
+            /* font-size: 10px; */
+        }
+        label.form-control-label {
+            margin-bottom: .15rem;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu a::after {
+            transform: rotate(-90deg);
+            position: absolute;
+            right: 6px;
+            top: .8em;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-left: .1rem;
+            margin-right: .1rem;
+        }
+
+        .nav-link {
+            color: #000;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .nav {
+            text-transform: uppercase;
+        }
+
+        .nav > .dropdown .dropdown-item {
+            color: #000;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        /* delete margin mainpanel */
+        .br-mainpanel {
+            margin-left: 0;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .table tr, 
+        .table > thead > tr > th,
+        .br-pagebody h6,
+        .form-control-label,
+        .form-control,
+        .form-control:focus,
+        .select2-selection__placeholder,
+        .select2-results__option, 
+        .tx-gray-800.mg-b-5,
+        .logged-name,
+        .user-profile-nav a {
+            font-size: 1.25rem;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .btn {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="br-logo"><a href=""><span>[</span>OPTIK<span>]</span></a></div>
+        <!-- <div class="br-sideleft overflow-y-auto">
+            <label class="sidebar-label pd-x-15 mg-t-20">NAVIGATION</label>
+            <div class="br-sideleft-menu">
+                <a href="#" class="br-menu-link" onclick="loadSection('dashboard')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+                        <span class="menu-item-label">DASHBOARD</span>
+                    </div>
+                </a>
+
+                <label class="sidebar-label pd-x-15 mg-t-20">TRANSAKSI</label>
+                <a href="#" class="br-menu-link" onclick="loadSection('penjualan')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">PENJUALAN</span>
+                    </div>
+                </a>
+                <a href="#" class="br-menu-link" onclick="loadSection('pembelian')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">PEMBELIAN</span>
+                    </div>
+                </a>
+                <a href="#" class="br-menu-link" onclick="loadSection('pindah')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">PEMINDAHAN BARANG</span>
+                    </div>
+                </a>
+                <a href="#" class="br-menu-link" onclick="loadSection('revisi')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">REFISI STOK</span>
+                    </div>
+                </a>
+
+                <label class="sidebar-label pd-x-15 mg-t-20">MASTER</label>
+                <a href="#" class="br-menu-link" onclick="loadSection('etalase')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">ETALASE</span>
+                    </div>
+                </a>
+                <a href="#" class="br-menu-link" onclick="loadSection('barang')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">BARANG</span>
+                    </div>
+                </a>
+                <a href="#" class="br-menu-link" onclick="loadSection('supplier')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">SUPPLIER</span>
+                    </div>
+                </a>
+                <a href="#" class="br-menu-link" onclick="loadSection('kategori')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">KATEGORI BARANG</span>
+                    </div>
+                </a>
+                <a href="#" class="br-menu-link" onclick="loadSection('pengguna')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">PENGGUNA</span>
+                    </div>
+                </a>
+                <a href="#" class="br-menu-link" onclick="loadSection('pelanggan')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">PELANGGAN</span>
+                    </div>
+                </a>
+
+                <label class="sidebar-label pd-x-15 mg-t-20">LAPORAN</label>
+                <a href="#" class="br-menu-link" onclick="loadSection('dashboard')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">PEMBELIAN</span>
+                    </div>
+                </a>
+                <a href="#" class="br-menu-link" onclick="loadSection('dashboard')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">PENJUALAN</span>
+                    </div>
+                </a>
+                <a href="#" class="br-menu-link" onclick="loadSection('dashboard')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">LABA RUGI</span>
+                    </div>
+                </a>
+
+                <label class="sidebar-label pd-x-15 mg-t-20">UCAPAN</label>
+                <a href="#" class="br-menu-link" onclick="loadSection('dashboard')">
+                    <div class="br-menu-item">
+                        <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                        <span class="menu-item-label">KIRIM SMS</span>
+                    </div>
+                </a>
+            </div>
+            <br />
+        </div> -->
+
+        <div class="br-header">
+            <div class="br-header-left">
+                <!-- <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div> -->
+                <!-- <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href=""><i class="icon ion-navicon-round"></i></a></div> -->
+                <div class="input-group hidden-xs-down wd-170 transition">
+                    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+                <!-- ============================ top nav dropdown ========================= -->
+                <nav class="nav">
+                    <div class="dropdown">
+                        <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            Transaksi
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="" class="dropdown-item" onclick="loadSection('penjualan')">Penjualan</a></li>
+                            <li><a href="" class="dropdown-item" onclick="loadSection('pembelian')">Pembelian</a></li>
+                            <li><a href="" class="dropdown-item" onclick="loadSection('pindah')">Pemindahan Barang</a></li>
+                            <li><a href="" class="dropdown-item" onclick="loadSection('revisi')">Revisi Stok</a></li>
+                            <!-- revisi || adding ./app/riwayat.html -->
+                            <li><a href="" class="dropdown-item" onclick="loadSection('riwayat')">Riwayat Transaksi</a></li>
+                            <!-- ================== -->
+
+                            <!-- ===================== ini submenu dari menu dropdown ================= -->
+
+                            <!-- <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Arts</a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">History</a></li>
+                                  <li><a class="dropdown-item" href="#">Geography</a></li>
+                                  <li><a class="dropdown-item" href="#">Sociology</a></li>
+                                </ul>
+                            </li> -->
+
+                            <!-- ============================ end of submenu dropdown ================================ -->
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            Master
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="" class="dropdown-item" onclick="loadSection('etalase')">Etalase</a></li>
+                            <!-- <li><a href="" class="dropdown-item">Barang</a></li> -->
+                            <li><a href="" class="dropdown-item" onclick="loadSection('kategori')">Kategori Barang</a></li>
+                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Barang</a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'lensa')">Lensa</a></li>
+                                  <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'frame')">Frame</a></li>
+                                  <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'softlense')">Softlense</a></li>
+                                  <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'cairan pembersih softlense')">Cairan Pembersih Softlense</a></li>
+                                  <li><a class="dropdown-item submenu-barang" href="" onclick="loadSection('barang', 'cairan pembersih kacamata')">Cairan Pembersih Kacamata</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="" class="dropdown-item" onclick="loadSection('supplier')">Supplier</a></li>
+                            <li><a href="" class="dropdown-item" onclick="loadSection('pengguna')">Pengguna</a></li>
+                            <li><a href="" class="dropdown-item" onclick="loadSection('pelanggan')">Pelanggan</a></li>
+
+                            <!-- ===================== ini submenu dari menu dropdown ================= -->
+
+                            <!-- ============================ end of submenu dropdown ================================ -->
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="br-header-right">
+                <nav class="nav">
+                    <div class="dropdown">
+                        <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
+                            <span class="logged-name hidden-md-down">Katherine</span>
+                            <img src="http://via.placeholder.com/64x64" class="wd-32 rounded-circle" alt="">
+                            <span class="square-10 bg-success"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-header wd-200">
+                            <ul class="list-unstyled user-profile-nav">
+                                <li><a href=""><i class="icon ion-power"></i> Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <style>
+            @media (min-width: 576px) {
+                .br-pagebody {
+                    padding: 0 15px;
+                }
+                .br-pagebody {
+                    margin-top: 15px;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .br-pagebody {
+                    margin-top: 10px;
+                }
+            }
+
+            @media (min-width: 992px) {
+                .br-section-wrapper {
+                    padding: 20px;
+                }
+            }
+
+            @media (max-width: 992px) {
+                .br-section-wrapper {
+                    padding: 15px 10px;
+                }
+            }
+        </style>
+
+        <div class="br-mainpanel">
+        </div>
+
+        <script type="text/javascript">
+            const section = $('.br-mainpanel')
+            const uri = 'http://optik.feraan.com/app' //ternyata iki kudu diubah ben modifyState() e work -_-
+            const loadSection = async(page, submenu = '') => {
+                await section.load(`${page}.html`) // `${page}.html` == page + '.html' || wkwkwk
+                await modifyState(page)
+
+                if(submenu != '') {
+                    localStorage.kb = submenu
+                }
+            }
+
+            const modifyState = async(page) => {
+                let stateObj = { id: "100" }
+                history.replaceState(stateObj, '', `${uri}/index.html?p=${page}`) //iki gawe opo mas? -_- url'e ga berubah.
+            }
+
+            const FIND_URI_PARAMS = (a) => {
+            	var query = Array(Array())
+            	var vars = window.location.search.substring(1).split("&")
+            	for (var i = 0; i < vars.length; i++) {
+            		var pair = vars[i].split("=")
+            		query[(i)] = pair
+            	}
+
+            	for (var i = 0; i < query.length; i++) {
+            		if (query[i][0] === a) {
+            			return query[i][1]
+            		}
+            	}
+            };
+
+            var trans = async(param) => {
+                return $.ajax({
+                    type: "POST",
+                    url: localStorage.api + $(param.e.currentTarget).attr('action'),
+                    dataType: 'json',
+                    data: $(param.form).serialize(),
+                    success: function(d) {
+                        return {"stat": "success", "data": d}
+                    },
+                    error: function(d) {
+                        return {"stat": "danger", "data": d}
+                    },
+                    statusCode: {
+                        404: function() {
+                            alert("There is some transaction error. Please contact us for help")
+                        },
+                        500: function() {
+                            alert("There is some transaction error. Please contact us for help")
+                        }
+                    }
+                })
+            }
+
+            // ===========================================
+            p = FIND_URI_PARAMS('p')
+            if (p !== '' && typeof p !== 'undefined') loadSection(p)
+            else loadSection('dashboard')
+        </script>
+
+        <script>
+            //========================= dropdown submenu ===================
+            $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+                if (!$(this).next().hasClass('show')) {
+                    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+                }
+                var $subMenu = $(this).next(".dropdown-menu");
+                $subMenu.toggleClass('show');
+
+
+                $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+                    $('.dropdown-submenu .show').removeClass("show");
+                });
+
+
+                return false
+            })
+            // ================================================================
+            
+            // ======================== submenu barang link =====================
+        
+            // ================================================================
+
+        </script>
+    </body>
+</html>

@@ -69,7 +69,7 @@ section.login-bg  > div.login-box > .login-box__divider {
 }
 
 .form-group {
-    margin-bottom: .5rem;
+    margin-bottom: .25rem;
 }
 
 thead th {
@@ -328,4 +328,50 @@ div.dataTables_length label {
         left: 0;
         z-index: 1000;
     }
+}
+
+/* revisi 
+    >| Decrease padding + margin
+*/
+
+.card-body {
+    padding: .5rem;
+}
+
+label {
+    margin-bottom: .25rem;
+}
+
+.custom-control-inline {
+    margin-right: .5rem;
+}
+
+.custom-control-label {
+    line-height: 1.5rem;
+}
+
+h3 {
+    margin-bottom: .25rem;
+}
+
+hr {
+    margin: .25rem;
+}
+
+.table td {
+    padding: .5rem;
+}
+
+.modal-body {
+    padding: .25rem;
+}
+
+.modal-body .container-fluid {
+    padding: 0;
+}
+
+.table-wrapper {
+    max-height: 550px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
