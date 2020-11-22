@@ -9,7 +9,7 @@ html {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .container {
@@ -27,6 +27,14 @@ html {
 
 .container .img-bg {
   width: 450px;
-  
+  -webkit-filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container .img-bg:focus {
+  -webkit-transform: rotate(90deg) scale(0.7);
+          transform: rotate(90deg) scale(0.7);
 }
 /*# sourceMappingURL=main.css.map */
